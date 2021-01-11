@@ -38,9 +38,9 @@ bot.sendTextMessage(chat_id, text[, disable_web_page_preview = False, disable_no
 - `disable_notification`: Optional, bool. Sends the message silently, when set to True. Default is False.
 - `reply_to_message_id`: Optional, integer. If the message is a reply, the ID of the original message. Set this parameter to None, if you don`t want to send the message as a reply. Default is None.
 - `allow_sending_without_reply`: Optional, integer. Sends the message even is the reply_to_message_id is invalid or not set. Default is True.
--` parse_mode`: Optional, string. Mode for parsing entities in the message text. Must be set to:
+- ` parse_mode`: Optional, string. Mode for parsing entities in the message text. Must be set to:
     - `MarkdownV2`
     - `HTML`
     - `Markdown`
-
+    
     Default is `MarkdownV2`
