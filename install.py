@@ -23,7 +23,7 @@ try:
         override = input("(y/n): ")
         if override == "y":
             override_ok = 1
-            shutil.rmtree(pathforpackages + "telegrambot")
+            #shutil.rmtree(pathforpackages + "telegrambot")
         else:
             pass
     except FileNotFoundError:
@@ -31,9 +31,10 @@ try:
 
     if override_ok == 1:
         progressbar = pb(range(2), desc="Installing Module")
+        
         old_path = old_cwd.decode()
         progressbar.update(1)
-        shutil.copytree(old_path, pathforpackages + "telegrambot")
+        shutil.unpack_archive(old_path + "/module.tar", extract_dir=pathforpackages + "telegrambot")
         progressbar.update(1)
         progressbar.close()
         print("Sucessfully Installed.\nYou can import the module with 'import telegrambot' now\nIf you need help, simply type 'python -m telegrambot --help' to the system shell.")
