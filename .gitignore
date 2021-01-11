@@ -1,0 +1,8 @@
+
+module/__init__.py
+module/__main__.py
+module/helpdocs.txt
+module/module_file/__pycache__/module_uninstaller.cpython-38.pyc
+module/install.py
+module/module_file/module_uninstaller.py
+module/README.md
