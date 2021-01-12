@@ -26,6 +26,7 @@ Required, string. The API-Key of your bot (like `1234:abcdefg`).
 ## Methods
 ### Send a Text Message
 You can send a Text message using the `bot.sendTextMessage()`
+Returns a dictionary with the response and the status code of the request as an integer.
 #### Syntax:
 ```python
 bot.sendTextMessage(chat_id, text[, disable_web_page_preview = False, disable_notification = False, reply_to_message_id = None, allow_sending_without_reply = True, parse_mode = `MarkdownV2`])
@@ -44,3 +45,19 @@ bot.sendTextMessage(chat_id, text[, disable_web_page_preview = False, disable_no
     - `Markdown`
     
     Default is `MarkdownV2`
+### Get Updates
+You can use this method to receive incoming updates. 
+Returns a dictionary with the response and the status code of the request as an integer.
+#### Syntax:
+```python
+getUpdates([offset=None, limit=100, timeout=0, allowed_updates=[]])
+```
+#### Parameters:
+- `offset`:
+    Required, integer. Identifier of the first update to be returned. Must be greater by one than the highest among the identifiers of previously received updates. By default, updates starting with the earliest unconfirmed update are returned. Default is None.
+- `limit`:
+    Required, integer. Limits the number of updates to be retrieved. Values between 1-100 are accepted. Default to 100.
+- `timeout`:
+    Required, integer. Timeout in seconds for long polling. Default is 0.
+- `allowed_updates`:
+    Required, array/list of strings. For example, specify [“message”, “edited_channel_post”, “callback_query”] to only receive updates of these types. Default is a empty array (will not be sended as parameter, if the array is empty).
