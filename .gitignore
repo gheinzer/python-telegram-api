@@ -6,3 +6,4 @@ module/module_file/__pycache__/module_uninstaller.cpython-38.pyc
 module/install.py
 module/module_file/module_uninstaller.py
 module/README.md
+archive_maker.py
