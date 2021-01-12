@@ -1,8 +1,9 @@
-import sys
+import shutil
+import os
+import getpass
+import time
+from tqdm import tqdm as pb
 
-args = sys.argv
-
-py
 class module_uninstaller:
     def uninstall():
         print("Telegram Bot Library Module Uninstaller")
@@ -29,14 +30,3 @@ class module_uninstaller:
                 quit()
         except:
             print("There was an error. This could be because you don't operate Windows (10). This installer was only tested on Windows and it could raise errors in other operating systems. Please try it again or create an issue on GitHub.")
-
-
-if len(args) > 1:
-    if args[1] == "--help":
-        helpdocsfile = open("helpdocs.txt", "r")
-        helpdocs = helpdocsfile.read()
-        helpdocsfile.close()
-        print(helpdocs)
-
-    if args[1] == "--uninstall":
-        module_uninstaller.uninstall()
