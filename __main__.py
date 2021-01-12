@@ -2,7 +2,6 @@ import sys
 
 args = sys.argv
 
-py
 class module_uninstaller:
     def uninstall():
         print("Telegram Bot Library Module Uninstaller")
