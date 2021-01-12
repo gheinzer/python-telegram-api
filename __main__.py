@@ -1,6 +1,11 @@
 import sys
+import shutil
+import getpass
+import time
+from tqdm import tqdm as pb
 
 args = sys.argv
+
 
 class module_uninstaller:
     def uninstall():
