@@ -42,7 +42,7 @@ if len(args) > 1:
         print(os.getcwd())
         helpdocspath = telegrambot.__file__.replace(
             "__init__.py", "helpdocs.txt")
-        helpdocsfile = open("helpdocs.txt", "r")
+        helpdocsfile = open(helpdocspath, "r")
         helpdocs = helpdocsfile.read()
         helpdocsfile.close()
         print(helpdocs)
