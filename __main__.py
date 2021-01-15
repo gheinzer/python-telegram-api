@@ -3,6 +3,8 @@ import shutil
 import getpass
 import time
 from tqdm import tqdm as pb
+import telegrambot
+import os
 
 args = sys.argv
 
@@ -37,7 +39,10 @@ class module_uninstaller:
 
 if len(args) > 1:
     if args[1] == "--help":
-        helpdocsfile = open("helpdocs.txt", "r")
+        print(os.getcwd())
+        helpdocspath = telegrambot.__file__.replace(
+            "__init__.py", "helpdocs.txt")
+        helpdocsfile = open(helpdocspath, "r")
         helpdocs = helpdocsfile.read()
         helpdocsfile.close()
         print(helpdocs)
