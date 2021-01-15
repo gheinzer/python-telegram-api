@@ -3,6 +3,7 @@ import os
 import getpass
 import time
 from tqdm import tqdm as pb
+import sys
 
 print("Telegram Bot Library Module Installer")
 print("*************************************")
@@ -11,7 +12,7 @@ print()
 try:
     old_cwd = os.getcwdb()
 
-    pathforpackages = sys.prefix + "/site-packages/"
+    pathforpackages = sys.prefix + "/Lib/site-packages/"
 
     override_ok = 0
     try:

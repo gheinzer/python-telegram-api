@@ -17,7 +17,7 @@ class module_uninstaller:
 
         try:
 
-            pathforpackages = sys.prefix + "/site-packages/"
+            pathforpackages = sys.prefix + "/Lib/site-packages/"
 
             print("Do you really want to uninstall this module?")
             ok = input("(y/n): ")
