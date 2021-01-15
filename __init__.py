@@ -126,7 +126,7 @@ class bot:
             request_data.append("reply_to_message_id=" + reply_to_message_id)
 
         r_text, r_status_code = self._send_request("sendMessage", request_data)
-        return str(json.loads(r_text)), int(r_status_code)
+        return json.loads(r_text), int(r_status_code)
 
     def getUpdates(self, offset=None, limit=100, timeout=0, allowed_updates=[]):
         """
@@ -161,4 +161,7 @@ class bot:
             request_data.append("timeout=" + str(timeout))
 
         r_text, r_status_code = self._send_request("getUpdates", request_data)
-        return str(json.loads(r_text)), int(r_status_code)
+        return json.loads(r_text), int(r_status_code)
+    def getCommands(self):
+        r_text, r_status_code = self._send_request("getMyCommands", []])
+        return json.loads(r_text), int(r_status_code)
