@@ -17,8 +17,7 @@ class module_uninstaller:
 
         try:
 
-            pathforpackages = "C:/Users/" + getpass.getuser() + \
-                "/AppData/Local/Programs/Python/Python38-32/Lib/site-packages/"
+            pathforpackages = sys.prefix + "/site-packages/"
 
             print("Do you really want to uninstall this module?")
             ok = input("(y/n): ")

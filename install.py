@@ -11,8 +11,7 @@ print()
 try:
     old_cwd = os.getcwdb()
 
-    pathforpackages = "C:/Users/" + getpass.getuser() + \
-        "/AppData/Local/Programs/Python/Python38-32/Lib/site-packages/"
+    pathforpackages = sys.prefix + "/site-packages/"
 
     override_ok = 0
     try:
