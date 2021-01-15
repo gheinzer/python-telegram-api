@@ -163,5 +163,16 @@ class bot:
         r_text, r_status_code = self._send_request("getUpdates", request_data)
         return json.loads(r_text), int(r_status_code)
     def getCommands(self):
-        r_text, r_status_code = self._send_request("getMyCommands", []])
+        """
+        Get the Bot Commands.
+
+        Syntax:
+            getCommands()
+
+        Parameters:
+            There are no parameters.
+
+        Returns a dictionary with the response and the status code of the request as an integer.
+        """
+        r_text, r_status_code = self._send_request("getMyCommands", [])
         return json.loads(r_text), int(r_status_code)

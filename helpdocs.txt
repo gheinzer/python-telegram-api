@@ -62,3 +62,12 @@ Methods
                 Required, array (list) of strings. For example, specify ["message", "edited_channel_post", "callback_query"] to only receive updates of these types. Default is a empty array (will not be sended as parameter, if the array is empty).
 
         Returns a dictionary with the response and the status code of the request as an integer.
+        Get the Bot Commands.
+
+            Syntax:
+                getCommands()
+
+            Parameters:
+                There are no parameters.
+
+            Returns a dictionary with the response and the status code of the request as an integer.

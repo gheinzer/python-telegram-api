@@ -50,7 +50,7 @@ You can use this method to receive incoming updates.
 Returns a dictionary with the response and the status code of the request as an integer.
 #### Syntax:
 ```python
-getUpdates([offset=None, limit=100, timeout=0, allowed_updates=[]])
+bot.getUpdates([offset=None, limit=100, timeout=0, allowed_updates=[]])
 ```
 #### Parameters:
 - `offset`:
@@ -61,3 +61,12 @@ getUpdates([offset=None, limit=100, timeout=0, allowed_updates=[]])
     Required, integer. Timeout in seconds for long polling. Default is 0.
 - `allowed_updates`:
     Required, array/list of strings. For example, specify [“message”, “edited_channel_post”, “callback_query”] to only receive updates of these types. Default is a empty array (will not be sended as parameter, if the array is empty).
+### Get Bot Commands.
+#### Syntax:
+```python
+bot.getCommands()
+```
+#### Parameters:
+There are no parameters.
+
+Returns a dictionary with the response and the status code of the request as an integer.
