@@ -50,7 +50,7 @@ You can use this method to receive incoming updates.
 Returns a dictionary with the response and the status code of the request as an integer.
 #### Syntax:
 ```python
-bot.getUpdates([offset=None, limit=100, timeout=0, allowed_updates=[]])
+response, status_code = bot.getUpdates([offset=None, limit=100, timeout=0, allowed_updates=[]])
 ```
 #### Parameters:
 - `offset`:
@@ -64,9 +64,21 @@ bot.getUpdates([offset=None, limit=100, timeout=0, allowed_updates=[]])
 ### Get Bot Commands.
 #### Syntax:
 ```python
-bot.getCommands()
+commands, status_code = bot.getCommands()
 ```
 #### Parameters:
 There are no parameters.
+
+Returns a dictionary with the commansd and the status code of the request as an integer.
+### Set the Bot Commands.
+#### Syntax:
+```python
+response, status_code = bot.setCommands(commands)
+```
+
+#### Parameters:
+- `commands`:
+    Required, dictionary. The commands to set (like `[{"command":"test","description":"this is only a test"},{"command":"testest","description":"second test"}]`). The Key of
+    this dictionary should be th actual command, the value should be the description.
 
 Returns a dictionary with the response and the status code of the request as an integer.

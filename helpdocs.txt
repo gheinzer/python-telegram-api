@@ -71,3 +71,14 @@ Methods
                 There are no parameters.
 
             Returns a dictionary with the response and the status code of the request as an integer.
+    Set the Bot Commands.
+
+        Syntax:
+            bot.setCommands(commands)
+
+        Parameters:
+            - commands:
+                Required, dictionary. The commands to set (like [{"command":"test","description":"this is only a test"},{"command":"testest","description":"second test"}]). The Key of
+                this dictionary should be th actual command, the value should be the description.
+
+        Returns a dictionary with the response and the status code of the request as an integer.
