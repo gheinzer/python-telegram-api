@@ -20,3 +20,7 @@ PyPi_Package/py_telegram.egg-info/dependency_links.txt
 PyPi_Package/py_telegram.egg-info/PKG-INFO
 PyPi_Package/py_telegram.egg-info/top_level.txt
 PyPi_Package/py_telegram.egg-info/SOURCES.txt
+PyPi_Package/py_telegram
+PyPi_Package/dist/py_telegram-1.0.0.1-py3-none-any.whl
+PyPi_Package/dist/py_telegram-1.0.0.1.tar.gz
+PyPi_Package/py_telegram
