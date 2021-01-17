@@ -50,7 +50,7 @@ class bot:
         Initalize the bot API. 
 
         Syntax:
-            bot = telegrambot.bot(apikey)
+            bot = py-telegrambot.bot(apikey)
 
         Parameters:
             - apikey:

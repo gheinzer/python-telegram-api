@@ -25,7 +25,7 @@ class module_uninstaller:
             if ok == "y":
                 progressbar = pb(range(2), desc="Uninstalling Module")
                 progressbar.update(1)
-                shutil.rmtree(pathforpackages + "telegrambot")
+                shutil.rmtree(pathforpackages + "py-telegrambot")
                 progressbar.update(1)
                 progressbar.close()
                 print("Sucessfully Uninstalled.")
@@ -39,7 +39,7 @@ class module_uninstaller:
 if len(args) > 1:
     if args[1] == "--help":
         print(os.getcwd())
-        helpdocspath = telegrambot.__file__.replace(
+        helpdocspath = py-telegrambot.__file__.replace(
             "__init__.py", "helpdocs.txt")
         helpdocsfile = open(helpdocspath, "r")
         helpdocs = helpdocsfile.read()
