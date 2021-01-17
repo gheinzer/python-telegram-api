@@ -23,11 +23,7 @@ class module_uninstaller:
                 progressbar.update(1)
 
 
-<< << << < HEAD
                 shutil.rmtree(pathforpackages + "py_telegram")
-== == == =
-                shutil.rmtree(pathforpackages + "py_telegram")
->>>>>> > 9c9d456a544df6a2910fdcb9e2924934519fb42a
                 progressbar.update(1)
                 progressbar.close()
                 print("Sucessfully Uninstalled.")

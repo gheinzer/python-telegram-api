@@ -7,28 +7,17 @@
 - `NoInternetConnectionError`: When the computer has no Internet, this error will raise.
 
 ## Help
-<<<<<<< HEAD
 If you need help, just type `python -m py_telegram --help` to the shell. 
-=======
-If you need help, just type `python -m py_telegram --help` to the shell. 
->>>>>>> 9c9d456a544df6a2910fdcb9e2924934519fb42a
+
 
 ## Installation
 For installing this library as python module, you just need to run `install.py`. 
 
-<<<<<<< HEAD
 If you want to uninstall, just type `python -m py_telegram --uninstall` to the shell. Then, the module will uninstall itself.
 
 ## Usage and initalisation
 ```python
 import py_telegram
-=======
-If you want to uninstall, just type `python -m py_telegram --uninstall` to the shell. Then, the module will uninstall itself.
-
-## Usage and initalisation
-```python
-import py_telegram
->>>>>>> 9c9d456a544df6a2910fdcb9e2924934519fb42a
 bot = telgrambot.bot(apikey: str)
 ```
 Parameters

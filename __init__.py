@@ -50,11 +50,8 @@ class bot:
         Initalize the bot API. 
 
         Syntax:
-<<<<<<< HEAD
             bot = py_telegram(apikey)
-=======
-            bot = py_telegram.bot(apikey)
->>>>>>> 9c9d456a544df6a2910fdcb9e2924934519fb42a
+
 
         Parameters:
             - apikey:
