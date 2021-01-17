@@ -4,6 +4,7 @@ import getpass
 import time
 from tqdm import tqdm as pb
 
+
 class module_uninstaller:
     def uninstall():
         print("Telegram Bot Library Module Uninstaller")
@@ -21,7 +22,7 @@ class module_uninstaller:
             if ok == "y":
                 progressbar = pb(range(2), desc="Uninstalling Module")
                 progressbar.update(1)
-                shutil.rmtree(pathforpackages + "telegrambot")
+                shutil.rmtree(pathforpackages + "py_telegrambot")
                 progressbar.update(1)
                 progressbar.close()
                 print("Sucessfully Uninstalled.")
