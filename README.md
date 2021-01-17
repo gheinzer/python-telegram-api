@@ -7,16 +7,28 @@
 - `NoInternetConnectionError`: When the computer has no Internet, this error will raise.
 
 ## Help
-If you need help, just type `python -m py_telegrambot --help` to the shell. 
+<<<<<<< HEAD
+If you need help, just type `python -m py_telegram --help` to the shell. 
+=======
+If you need help, just type `python -m py_telegram --help` to the shell. 
+>>>>>>> 9c9d456a544df6a2910fdcb9e2924934519fb42a
 
 ## Installation
 For installing this library as python module, you just need to run `install.py`. 
 
-If you want to uninstall, just type `python -m py_telegrambot --uninstall` to the shell. Then, the module will uninstall itself.
+<<<<<<< HEAD
+If you want to uninstall, just type `python -m py_telegram --uninstall` to the shell. Then, the module will uninstall itself.
 
 ## Usage and initalisation
 ```python
-import py_telegrambot
+import py_telegram
+=======
+If you want to uninstall, just type `python -m py_telegram --uninstall` to the shell. Then, the module will uninstall itself.
+
+## Usage and initalisation
+```python
+import py_telegram
+>>>>>>> 9c9d456a544df6a2910fdcb9e2924934519fb42a
 bot = telgrambot.bot(apikey: str)
 ```
 Parameters
@@ -50,7 +62,7 @@ You can use this method to receive incoming updates.
 Returns a dictionary with the response and the status code of the request as an integer.
 #### Syntax:
 ```python
-getUpdates([offset=None, limit=100, timeout=0, allowed_updates=[]])
+response, status_code = bot.getUpdates([offset=None, limit=100, timeout=0, allowed_updates=[]])
 ```
 #### Parameters:
 - `offset`:
@@ -61,3 +73,24 @@ getUpdates([offset=None, limit=100, timeout=0, allowed_updates=[]])
     Required, integer. Timeout in seconds for long polling. Default is 0.
 - `allowed_updates`:
     Required, array/list of strings. For example, specify [“message”, “edited_channel_post”, “callback_query”] to only receive updates of these types. Default is a empty array (will not be sended as parameter, if the array is empty).
+### Get Bot Commands.
+#### Syntax:
+```python
+commands, status_code = bot.getCommands()
+```
+#### Parameters:
+There are no parameters.
+
+Returns a dictionary with the commansd and the status code of the request as an integer.
+### Set the Bot Commands.
+#### Syntax:
+```python
+response, status_code = bot.setCommands(commands)
+```
+
+#### Parameters:
+- `commands`:
+    Required, dictionary. The commands to set (like `[{"command":"test","description":"this is only a test"},{"command":"testest","description":"second test"}]`). The Key of
+    this dictionary should be th actual command, the value should be the description.
+
+Returns a dictionary with the response and the status code of the request as an integer.

@@ -1,10 +1,13 @@
+import os
+import py_telegram
 import sys
 import shutil
 import getpass
 import time
 from tqdm import tqdm as pb
-import py_py_telegrambot
-import os
+<< << << < HEAD
+== == == =
+>>>>>> > 9c9d456a544df6a2910fdcb9e2924934519fb42a
 
 args = sys.argv
 
@@ -17,8 +20,7 @@ class module_uninstaller:
 
         try:
 
-            pathforpackages = "C:/Users/" + getpass.getuser() + \
-                "/AppData/Local/Programs/Python/Python38-32/Lib/site-packages/"
+            pathforpackages = sys.prefix + "/Lib/site-packages/"
 
             print("Do you really want to uninstall this module?")
             ok = input("(y/n): ")
@@ -26,7 +28,13 @@ class module_uninstaller:
             if ok == "y":
                 progressbar = pb(range(2), desc="Uninstalling Module")
                 progressbar.update(1)
-                shutil.rmtree(pathforpackages + "py_telegrambot")
+
+
+<< << << < HEAD
+                shutil.rmtree(pathforpackages + "py_telegram")
+== == == =
+                shutil.rmtree(pathforpackages + "py_telegram")
+>>>>>> > 9c9d456a544df6a2910fdcb9e2924934519fb42a
                 progressbar.update(1)
                 progressbar.close()
                 print("Sucessfully Uninstalled.")
@@ -40,7 +48,11 @@ class module_uninstaller:
 if len(args) > 1:
     if args[1] == "--help":
         print(os.getcwd())
-        helpdocspath = py_telegrambot.__file__.replace(
+<<<<<<< HEAD
+        helpdocspath = py_telegram.__file__.replace(
+=======
+        helpdocspath = py_telegram.__file__.replace(
+>>>>>>> 9c9d456a544df6a2910fdcb9e2924934519fb42a
             "__init__.py", "helpdocs.txt")
         helpdocsfile = open(helpdocspath, "r")
         helpdocs = helpdocsfile.read()

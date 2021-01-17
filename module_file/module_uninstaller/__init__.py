@@ -13,8 +13,7 @@ class module_uninstaller:
 
         try:
 
-            pathforpackages = "C:/Users/" + getpass.getuser() + \
-                "/AppData/Local/Programs/Python/Python38-32/Lib/site-packages/"
+            pathforpackages = sys.prefix + "/Lib/site-packages/"
 
             print("Do you really want to uninstall this module?")
             ok = input("(y/n): ")
@@ -22,7 +21,13 @@ class module_uninstaller:
             if ok == "y":
                 progressbar = pb(range(2), desc="Uninstalling Module")
                 progressbar.update(1)
-                shutil.rmtree(pathforpackages + "py_telegrambot")
+
+
+<< << << < HEAD
+                shutil.rmtree(pathforpackages + "py_telegram")
+== == == =
+                shutil.rmtree(pathforpackages + "py_telegram")
+>>>>>> > 9c9d456a544df6a2910fdcb9e2924934519fb42a
                 progressbar.update(1)
                 progressbar.close()
                 print("Sucessfully Uninstalled.")
