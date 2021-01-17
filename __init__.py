@@ -68,7 +68,6 @@ class bot:
         for i in request_data:
             request_data_str = request_data_str + str(request_data[x]) + "&"
             x = x + 1
-        del i
         request = requests.get(
             "https://api.telegram.org/bot" + self.apikey + "/" + method + request_data_str)
         if not request.status_code == 200:
