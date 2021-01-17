@@ -22,7 +22,6 @@ class module_uninstaller:
                 progressbar = pb(range(2), desc="Uninstalling Module")
                 progressbar.update(1)
 
-
                 shutil.rmtree(pathforpackages + "py_telegram")
                 progressbar.update(1)
                 progressbar.close()
