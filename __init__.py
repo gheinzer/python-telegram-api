@@ -50,7 +50,7 @@ class bot:
         Initalize the bot API. 
 
         Syntax:
-            bot = telegrambot(apikey)
+            bot = py_telegram.bot(apikey)
 
         Parameters:
             - apikey:
@@ -81,7 +81,7 @@ class bot:
         Send a Text Message. 
 
         Syntax:
-            sendTextMessage(chat_id, text[, disable_web_page_preview = False, disable_notification = False, reply_to_message_id = None, allow_sending_without_reply = True, parse_mode = 'MarkdownV2'])
+            bot.sendTextMessage(chat_id, text[, disable_web_page_preview = False, disable_notification = False, reply_to_message_id = None, allow_sending_without_reply = True, parse_mode = 'MarkdownV2'])
 
         Parameters:
             - chat_id:
@@ -126,14 +126,14 @@ class bot:
             request_data.append("reply_to_message_id=" + reply_to_message_id)
 
         r_text, r_status_code = self._send_request("sendMessage", request_data)
-        return str(json.loads(r_text)), int(r_status_code)
+        return json.loads(r_text), int(r_status_code)
 
     def getUpdates(self, offset=None, limit=100, timeout=0, allowed_updates=[]):
         """
         Use this method to receive incoming updates. 
 
         Syntax:
-            getUpdates([offset=None, limit=100, timeout=0, allowed_updates=[]])
+            bot.getUpdates([offset=None, limit=100, timeout=0, allowed_updates=[]])
 
         Parameters:
             - offset:
@@ -161,4 +161,38 @@ class bot:
             request_data.append("timeout=" + str(timeout))
 
         r_text, r_status_code = self._send_request("getUpdates", request_data)
-        return str(json.loads(r_text)), int(r_status_code)
+        return json.loads(r_text), int(r_status_code)
+
+    def getCommands(self):
+        """
+        Get the Bot Commands.
+
+        Syntax:
+            bot.getCommands()
+
+        Parameters:
+            There are no parameters.
+
+        Returns a dictionary with the response and the status code of the request as an integer.
+        """
+        r_text, r_status_code = self._send_request("getMyCommands", [])
+        return json.loads(r_text)["result"], int(r_status_code)
+
+    def setCommands(self, commands: dict):
+        """
+        Set the Bot Commands.
+
+        Syntax:
+            bot.setCommands(commands)
+
+        Parameters:
+            - commands:
+                Required, dictionary. The commands to set (like [{"command":"test","description":"this is only a test"},{"command":"testest","description":"second test"}]). The Key of
+                this dictionary should be th actual command, the value should be the description.
+
+        Returns a dictionary with the response and the status code of the request as an integer.
+        """
+        commands = json.dumps(commands)
+        r_text, r_status_code = self._send_request(
+            "setMyCommands", ["commands=" + commands])
+        return json.loads(r_text), int(r_status_code)
