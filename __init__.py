@@ -68,6 +68,7 @@ class bot:
         for i in request_data:
             request_data_str = request_data_str + str(request_data[x]) + "&"
             x = x + 1
+        del i
         request = requests.get(
             "https://api.telegram.org/bot" + self.apikey + "/" + method + request_data_str)
         if not request.status_code == 200:
@@ -187,7 +188,7 @@ class bot:
 
         Parameters:
             - commands:
-                Required, dictionary. The commands to set (like {"command":"test","description":"this is only a test"},{"command":"testest","description":"second test"}). The Key of
+                Required, dictionary. The commands to set (like [{"command":"test","description":"this is only a test"},{"command":"testest","description":"second test"}]). The Key of
                 this dictionary should be th actual command, the value should be the description.
 
         Returns a dictionary with the response and the status code of the request as an integer.
