@@ -7,4 +7,5 @@ module/install.py
 module/module_file/module_uninstaller.py
 module/README.md
 archive_maker.py
-PyPi_Package/*
+PyPi_Package/py_telegram/
+PyPi_Package/
