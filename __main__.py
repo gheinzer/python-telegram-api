@@ -10,31 +10,39 @@ args = sys.argv
 
 
 class module_uninstaller:
+    class FNFE0(OSError):
+        pass
+
     def uninstall():
         print("Telegram Bot Library Module Uninstaller")
         print("***************************************")
         print()
 
-        try:
+        # try:
+        pathforpackages = sys.prefix + "/Lib/site-packages/"
+        os.chdir(pathforpackages)
+        """except FileNotFoundError:
+            pathforpackages = sys.prefix + "/lib/site-packages/"
+            os.chdir(pathforpackages)"""
+        """ finally:
+            raise module_uninstaller.FNFE0(
+                "There was an error. Please create an issue on GitHub with a note of the error code (FNFE0)")
+            time.sleep(3) """
+        os.chdir("C:")
 
-            pathforpackages = "C:/Users/" + getpass.getuser() + \
-                "/AppData/Local/Programs/Python/Python38-32/Lib/site-packages/"
+        print("Do you really want to uninstall this module?")
+        ok = input("(y/n): ")
 
-            print("Do you really want to uninstall this module?")
-            ok = input("(y/n): ")
-
-            if ok == "y":
-                progressbar = pb(range(2), desc="Uninstalling Module")
-                progressbar.update(1)
-                shutil.rmtree(pathforpackages + "py_telegram")
-                progressbar.update(1)
-                progressbar.close()
-                print("Sucessfully Uninstalled.")
-                time.sleep(5)
-            else:
-                quit()
-        except:
-            print("There was an error. This could be because you don't operate Windows (10). This installer was only tested on Windows and it could raise errors in other operating systems. Please try it again or create an issue on GitHub.")
+        if ok == "y":
+            progressbar = pb(range(2), desc="Uninstalling Module")
+            progressbar.update(1)
+            shutil.rmtree(pathforpackages + "py_telegram")
+            progressbar.update(1)
+            progressbar.close()
+            print("Sucessfully Uninstalled.")
+            time.sleep(5)
+        else:
+            quit()
 
 
 if len(args) > 1:
