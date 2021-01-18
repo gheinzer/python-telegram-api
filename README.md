@@ -6,6 +6,8 @@
 - `BotNotExistsError`: When the bot not exists, this error will raise.
 - `NoInternetConnectionError`: When the computer has no Internet, this error will raise.
 
+There are some other Errors, you can look at them [here]("errorcodes.md)
+
 ## Help
 If you need help, just type `python -m py_telegram --help` to the shell. 
 
