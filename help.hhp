@@ -1,0 +1,14 @@
+[OPTIONS]
+Auto TOC=9
+Compatibility=1.1 or later
+Compiled file=help.chm
+Contents file=help\Table of Contents.hhc
+Default Font=Corbel Light,11,0
+Display compile progress=No
+Index file=help\Index.hhk
+Language=0x807 Deutsch (Schweiz)
+Title=ImageRenameAgent
+
+
+[INFOTYPES]
+
