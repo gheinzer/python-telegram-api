@@ -1,1 +1,2 @@
-pathes = [ "/hello", "/test",]
+configurated = true
+pathes = [ "Z:",]

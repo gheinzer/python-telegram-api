@@ -3,7 +3,7 @@ import os
 
 
 class IRA_WEBSERVER():
-    def start():
+    def _start_server():
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
         s.bind(('', 80))

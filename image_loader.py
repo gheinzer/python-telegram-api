@@ -14,7 +14,7 @@ for c in classes:
     bing_crawler.crawl(keyword=c, filters=None,
                        max_num=number, offset=0)
 
-classes = ['NOT']
+classes = ['NOT flower']
 number = 5
 # here root directory is find your root directory there u will find
 # new file name data in which all images are saved.
