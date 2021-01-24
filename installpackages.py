@@ -1,7 +1,7 @@
 import subprocess
 import time
 
-packages = ["toml", "icrawler", "opencv-python", "tqdm"]
+packages = ["toml", "icrawler", "opencv-python", "tqdm", "tinydb", "markdown"]
 
 
 for i in packages:

@@ -4,6 +4,7 @@ import _thread
 import sys
 import math
 import toml
+#from actions import actions
 
 
 class IRA_WEBSERVER():
@@ -57,13 +58,9 @@ class IRA_WEBSERVER():
                         htmlfile = open(htmlfilepath, "r")
                         DataToSend = htmlfile.read()
                         htmlfile.close()
-                formatting_dict = {}
-                formatting_dict["test"] = "Hello World"
-                formatting_dict["ipaddr"] = "localhost"
-                tomlfile = open("config.toml", "r")
-                tomlcontent = toml.load(tomlfile)
-                tomlfile.close()
-                formatting_dict["configuratedobjects"] = tomlcontent["configurated_objects"]
+
+                formatting_dict = IRA_WEBSERVER.formatting_dict()
+
                 if not ".css" in requestpath and not ".ttf" in requestpath and not ".png" in requestpath and not ".js" in requestpath:
                     DataToSend = DataToSend.format(**formatting_dict)
                 if not type(DataToSend) == bytes:
@@ -77,6 +74,10 @@ class IRA_WEBSERVER():
     def _load_parameters(addr: str) -> dict:
         parameters = str(addr).split("?", 1)[1]
         parameters = parameters.split("=")
+        x = 0
+        for i in parameters:
+            parameters[x] = i.split("&")
+            x = x + 1
         parameterdict = dict()
         x = 0
         for i in parameters:
@@ -86,3 +87,33 @@ class IRA_WEBSERVER():
                 parameterdict[parameters[x - 1]] = i.replace("+", " ")
             x = x + 1
         return parameterdict, str(addr).split("?", 1)[0]
+
+    def parameter_handler(parameters: dict):
+        try:
+            if parameters["createNewWatchedPath"] == "True" and not parameters["path"] == "":
+                actions.NewPath(str(parameters["path"]))
+            if parameters["deleteWatchedPath"] == "True" and not parameters["path"] == "":
+                actions.NewPath(str(parameters["path"]))
+        except KeyError:
+            pass
+
+        return DataToSend
+
+    def configurated_objects() -> str:
+        tomlfile = open("config.toml", "r")
+        tomlcontent = toml.load(tomlfile)
+        tomlfile.close()
+        for i in tomlcontent["configurated_objects"]:
+            html_list = ""
+            html_list = html_list + "<li>" + i + "</li><br>"
+        return html_list
+
+    def formatting_dict() -> dict:
+        hostname = socket.gethostname()
+        ip = socket.gethostbyname(hostname)
+
+        formatting_dict = {}
+        formatting_dict["test"] = "Hello World"
+        formatting_dict["ipaddr"] = ip
+        formatting_dict["configuratedobjects"] = IRA_WEBSERVER.configurated_objects()
+        return formatting_dict
