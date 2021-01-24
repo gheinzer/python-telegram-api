@@ -1,3 +1,8 @@
 from websocket import IRA_WEBSERVER
+import traceback
 
-IRA_WEBSERVER._start_server()
+while 1:
+    try:
+        IRA_WEBSERVER._start_server()
+    except:
+        pass
