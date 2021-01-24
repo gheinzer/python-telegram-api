@@ -44,6 +44,18 @@
     animation: loader 2s;
     animation-iteration-count: infinite;
 }
+
+.button {
+    padding: 10px;
+    border: none;
+    border-radius: 2px;
+    background-color: rgb(36, 36, 36);
+    color: white;
+}
+.button:hover {
+    background-color: rgb(70, 70, 70);
+}
+
 @keyframes loader {
         0% {
             transform: rotateY(0deg)
@@ -52,3 +64,7 @@
             transform: rotateY(180deg)
         }
     }
+.add-plus {
+    vertical-align: top;
+    height: 15px;
+}
