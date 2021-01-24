@@ -1,2 +1,3 @@
 configurated = true
-pathes = [ "Z:",]
+pathes = []
+configurated_objects = [ "blume", "test",]

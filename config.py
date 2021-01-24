@@ -1,5 +1,6 @@
 import toml
 import time
+import os
 
 print("ImageRenameAgent 2021")
 print("¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨")
@@ -31,6 +32,12 @@ if already_configurated:
 else:
     config = {"configurated": True}
     config["pathes"] = []
+    cascadefiles = os.listdir("cascades")
+    cascades = []
+    for i in cascadefiles:
+        objectname = i.replace(".xml", "")
+        cascades.append(objectname)
+    config["configurated_objects"] = list(cascades)
 
     tomlfile = open("config.toml", "w")
     toml.dump(config, tomlfile)

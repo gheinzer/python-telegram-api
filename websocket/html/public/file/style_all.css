@@ -1,0 +1,54 @@
+@font-face {
+    font-family: JosefinSans;
+    src: url("font.ttf");
+}
+.error-body {
+    font-family: JosefinSans, sans-serif;
+    text-align: center; 
+    padding: 10 px;
+    font-weight: normal;
+    color: black;
+    background-color: lightcoral;
+}
+.normal-body {
+    font-family: JosefinSans, sans-serif;
+    text-align: left; 
+    padding: 10 px;
+    font-weight: bold;
+    color: white;
+    background-color: black;
+}
+.logoimg {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+
+.loader_overlay {
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: gray;
+}
+.loader {
+    position: absolute;
+    width: 10%;
+    left: 45%;
+    right: 45%;
+    top: 10%;
+    margin: 0%;
+    animation: loader 2s;
+    animation-iteration-count: infinite;
+}
+@keyframes loader {
+        0% {
+            transform: rotateY(0deg)
+        }
+        100% {
+            transform: rotateY(180deg)
+        }
+    }
