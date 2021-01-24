@@ -103,9 +103,9 @@ class IRA_WEBSERVER():
         tomlfile = open("config.toml", "r")
         tomlcontent = toml.load(tomlfile)
         tomlfile.close()
+        html_list = ""
         for i in tomlcontent["configurated_objects"]:
-            html_list = ""
-            html_list = html_list + "<li>" + i + "</li><br>"
+            html_list = html_list + "<li style='padding: 0 px;'>" + i + "</li><br>"
         return html_list
 
     def formatting_dict() -> dict:
