@@ -1,6 +1,6 @@
 import socket
 import os
-import _thread
+import threading
 import sys
 import math
 import toml
@@ -8,13 +8,14 @@ import toml
 
 
 class IRA_WEBSERVER():
-    def _start_server():
+    @classmethod
+    def _start_server(test):
 
         print("Starting websocket...")
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
         s.bind(('', 80))
-        s.listen()
+        s.listen(0)
         while 1:
             print("Waiting for connections...")
             conn, addr = s.accept()
@@ -68,11 +69,11 @@ class IRA_WEBSERVER():
                     DataToSend = bytearray(DataToSend.encode())
                 conn.sendall(DataToSend)
                 conn.close()
-
+    @classmethod  
     def start():
-        _thread.start_new_thread(IRA_WEBSERVER._start_server, ())
+        threading.start_newthreading(IRA_WEBSERVER._start_server, ())
 
-    def _load_parameters(addr: str) -> dict:
+    def _load_parameters(addr):
         parameters = str(addr).split("?", 1)[1]
         parameters = parameters.split("=")
         x = 0
@@ -90,7 +91,7 @@ class IRA_WEBSERVER():
             x = x + 1
         return parameterdict, str(addr).split("?", 1)[0]
 
-    def parameter_handler(parameters: dict):
+    def parameter_handler(parameters):
         try:
             if parameters["createNewWatchedPath"] == "True" and not parameters["path"] == "":
                 actions.NewPath(str(parameters["path"]))
@@ -101,7 +102,7 @@ class IRA_WEBSERVER():
 
         return DataToSend
 
-    def configurated_objects() -> str:
+    def configurated_objects():
         hostname = socket.gethostname()
         ip = socket.gethostbyname(hostname)
         tomlfile = open("config.toml", "r")
@@ -110,16 +111,15 @@ class IRA_WEBSERVER():
         html_list = ""
         for i in tomlcontent["configurated_objects"]:
             html_list = html_list + "<li style='padding: 0 px;'>" + i + \
-                "<a class='img-link' href='/?deleteObject=True&object=" + i + "'><img src='http://" + \
-                ip + "/file/delete-white-18dp.svg' class='button-img'></a></li><br>"
+                "<a class='img-link' href='/?deleteObject=True&object=" + i + "'><img src='http://" + "192.168.1.40" + "/file/delete-white-18dp.svg' class='button-img'></a></li><br>"
         return html_list
 
-    def formatting_dict() -> dict:
+    def formatting_dict():
         hostname = socket.gethostname()
         ip = socket.gethostbyname(hostname)
 
         formatting_dict = {}
         formatting_dict["test"] = "Hello World"
-        formatting_dict["ipaddr"] = ip
+        formatting_dict["ipaddr"] = "192.168.1.40"
         formatting_dict["configuratedobjects"] = IRA_WEBSERVER.configurated_objects()
         return formatting_dict
