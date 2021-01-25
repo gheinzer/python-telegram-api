@@ -46,6 +46,7 @@
 }
 
 .button {
+    font-family: JosefinSans, sans-serif;
     padding: 10px;
     border: none;
     border-radius: 2px;
@@ -67,4 +68,8 @@
 .add-plus {
     vertical-align: top;
     height: 15px;
+}
+.button-img {
+    vertical-align: top;
+    height: 17px;
 }

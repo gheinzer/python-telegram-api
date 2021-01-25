@@ -9,6 +9,7 @@ import toml
 
 class IRA_WEBSERVER():
     def _start_server():
+
         print("Starting websocket...")
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
@@ -84,7 +85,8 @@ class IRA_WEBSERVER():
             if x % 2 == 0:  # gerade Zahl
                 parameterdict[i] = ""
             else:
-                parameterdict[parameters[x - 1]] = i.replace("+", " ")
+                parameterdict[parameters[x - 1]
+                              ] = parameterdict[x].replace("+", " ")
             x = x + 1
         return parameterdict, str(addr).split("?", 1)[0]
 
@@ -100,12 +102,16 @@ class IRA_WEBSERVER():
         return DataToSend
 
     def configurated_objects() -> str:
+        hostname = socket.gethostname()
+        ip = socket.gethostbyname(hostname)
         tomlfile = open("config.toml", "r")
         tomlcontent = toml.load(tomlfile)
         tomlfile.close()
         html_list = ""
         for i in tomlcontent["configurated_objects"]:
-            html_list = html_list + "<li style='padding: 0 px;'>" + i + "</li><br>"
+            html_list = html_list + "<li style='padding: 0 px;'>" + i + \
+                "<a class='img-link' href='/?deleteObject=True&object=" + i + "'><img src='http://" + \
+                ip + "/file/delete-white-18dp.svg' class='button-img'></a></li><br>"
         return html_list
 
     def formatting_dict() -> dict:
