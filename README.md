@@ -1,6 +1,6 @@
 # Telegram Bot API Library
 ## Requirements
-- Module requests (You can get it on: https://www.pypi.com/project/requests/)
+- Module requests (You can get it on: https://www.pypi.org/project/requests/)
 
 ## Errors and Exceptions
 - `BotNotExistsError`: When the bot not exists, this error will raise.
